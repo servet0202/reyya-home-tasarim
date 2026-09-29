@@ -1,12 +1,17 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Reyya Home Tasarım | Adıyaman Özel Ölçü Perde Atölyesi</title>
-<link rel="canonical" href="https://www.reyyahome.com/">
+<link rel="canonical" href="https://reyya-home-tasarim.vercel.app/">
 <meta name="robots" content="index, follow">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "HomeGoodsStore",
   "name": "Reyya Home Tasarım",
-  "image": "https://www.reyyahome.com/og-image.jpg",
+  "image": "https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/og-image.jpg",
   "telephone": "+905332484202",
   "priceRange": "₺₺-₺₺₺",
   "address": {
@@ -29,7 +34,7 @@
   "sameAs": [
     "https://instagram.com/reyya_home"
   ],
-  "url": "https://www.reyyahome.com/",
+  "url": "https://reyya-home-tasarim.vercel.app/",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Reyya Home Tasarım Koleksiyonları",
@@ -46,17 +51,18 @@
 </script>
 <meta name="description" content="Adıyaman'da özel ölçü, el işçiliği perde ve tül atölyesi Reyya Home Tasarım. Kumaş seçeneklerini inceleyin, WhatsApp'tan ücretsiz keşif ve sipariş talebi oluşturun.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://reyya-home-tasarim.vercel.app/">
 <meta property="og:site_name" content="Reyya Home Tasarım">
 <meta property="og:title" content="Reyya Home Tasarım | Adıyaman Premium Perde Mağazası">
 <meta property="og:description" content="Adıyaman'da özel ölçü perde ve tül atölyesi. Kumaşları inceleyin, WhatsApp'tan ücretsiz keşif ve sipariş talebi oluşturun.">
-<meta property="og:image" content="https://www.reyyahome.com/og-image.jpg">
+<meta property="og:image" content="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="tr_TR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Reyya Home Tasarım | Adıyaman Premium Perde Mağazası">
 <meta name="twitter:description" content="Adıyaman'da özel ölçü perde ve tül atölyesi. Kumaşları inceleyin, WhatsApp'tan ücretsiz keşif ve sipariş talebi oluşturun.">
-<meta name="twitter:image" content="https://www.reyyahome.com/og-image.jpg">
+<meta name="twitter:image" content="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/og-image.jpg">
 <link rel="icon" href="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/favicon16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/favicon32.png">
@@ -75,6 +81,8 @@
     --clay-deep:#7F2C1B;
     --olive:#545A3E;
     --brass:#9C7A3C;
+    --brass-text:#7A5C26;
+    --panel-dark:#2A241F;
     --line: rgba(42,36,31,0.14);
     --shadow: 0 20px 50px -20px rgba(42,36,31,0.35);
   }
@@ -89,6 +97,8 @@
       --clay-deep:#C4532C;
       --olive:#9CA37E;
       --brass:#C9A05C;
+      --brass-text:#D4AD6A;
+      color-scheme:dark;
       --line: rgba(239,231,216,0.14);
       --shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
     }
@@ -102,6 +112,8 @@
     --clay-deep:#C4532C;
     --olive:#9CA37E;
     --brass:#C9A05C;
+    --brass-text:#D4AD6A;
+    color-scheme:dark;
     --line: rgba(239,231,216,0.14);
     --shadow: 0 20px 60px -20px rgba(0,0,0,0.6);
   }
@@ -130,7 +142,7 @@
     font-size:0.72rem;
     letter-spacing:0.22em;
     text-transform:uppercase;
-    color:var(--brass);
+    color:var(--brass-text);
     font-weight:700;
   }
 
@@ -217,7 +229,7 @@
       linear-gradient(180deg, var(--stone), var(--stone));
   }
   .curtain-panel{
-    position:fixed; inset:0 auto 0 0; width:52%; height:100%;
+    position:fixed; pointer-events:none; inset:0 auto 0 0; width:52%; height:100%;
     background:
       repeating-linear-gradient(90deg, var(--clay-deep) 0px, var(--clay) 26px, var(--clay-deep) 52px),
       var(--clay);
@@ -229,14 +241,14 @@
   @keyframes openLeft{ to{ transform:translateX(-102%); } }
   @keyframes openRight{ to{ transform:translateX(102%); } }
   @media (prefers-reduced-motion: reduce){
-    .curtain-panel{ animation:none; opacity:0; }
+    .curtain-panel{ display:none; }
   }
 
   .hero-grid{
     width:100%;
     display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;
   }
-  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+  @media(max-width:900px){ .hero-grid{grid-template-columns:1fr;} .hero{padding-top:112px; padding-bottom:48px;} }
 
   .hero h1{
     font-size:clamp(2.6rem, 6vw, 4.6rem);
@@ -261,7 +273,7 @@
   .hero-visual{
     position:relative; aspect-ratio:3/4; border-radius:2px; overflow:hidden;
     box-shadow:var(--shadow);
-    background:var(--ink);
+    background:var(--panel-dark);
   }
   .hero-visual img{
     position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
@@ -269,11 +281,11 @@
   .hero-visual::before{
     content:"";
     position:absolute; inset:0;
-    background:linear-gradient(155deg, color-mix(in srgb, var(--olive) 55%, transparent) 0%, color-mix(in srgb, var(--ink) 70%, transparent) 100%);
+    background:linear-gradient(155deg, color-mix(in srgb, var(--olive) 55%, transparent) 0%, color-mix(in srgb, var(--panel-dark) 70%, transparent) 100%);
   }
   .hero-visual .tag{
     position:absolute; left:20px; bottom:20px; right:20px;
-    background:color-mix(in srgb, var(--ink) 70%, transparent);
+    background:color-mix(in srgb, var(--panel-dark) 70%, transparent);
     color:#F6F1E7; padding:16px 18px; border-radius:2px;
     font-size:0.82rem; line-height:1.5;
     backdrop-filter:blur(6px);
@@ -350,7 +362,7 @@
   }
   .collection-card:hover img{ transform:scale(1.04); }
   .collection-card img{ transition:transform .5s ease; }
-  .collection-card .num{position:relative; z-index:1; font-size:0.75rem; color:#F6F1E7cc; letter-spacing:0.1em; font-weight:700;}
+  .collection-card .num{position:relative; z-index:1; font-size:0.75rem; color:var(--brass-text); letter-spacing:0.1em; font-weight:700;}
   .collection-card h3{position:relative; z-index:1; font-size:1.3rem;}
   .collection-card p{position:relative; z-index:1; color:var(--ink-soft); font-size:0.9rem; line-height:1.5;}
   .collection-card:hover{background:color-mix(in srgb, var(--linen) 88%, var(--brass));}
@@ -360,10 +372,10 @@
   .collection-card .slide-count{pointer-events:none; font-size:0.72rem; color:#F6F1E7; background:rgba(20,18,15,0.5); padding:2px 8px; border-radius:10px; letter-spacing:0.03em;}
   .collection-card img[id^="cimg-"]{cursor:zoom-in;}
 
-  .nemrut-section{background:var(--ink); color:#F6F1E7; padding:88px 0;}
+  .nemrut-section{background:var(--panel-dark); color:#F6F1E7; padding:88px 0;}
   .nemrut-section .wrap{max-width:1080px;}
   .nemrut-section .section-head{text-align:center; margin-bottom:40px;}
-  .nemrut-section .eyebrow{color:var(--brass);}
+  .nemrut-section .eyebrow{color:#D4AD6A;}
   .nemrut-section h2{color:#F6F1E7;}
   .nemrut-section .lead{color:#F6F1E7cc; max-width:640px; margin:14px auto 0; text-align:center; line-height:1.7;}
   .nemrut-slider{position:relative; max-width:880px; margin:0 auto; aspect-ratio:16/10; border-radius:2px; overflow:hidden; background:#000;}
@@ -392,16 +404,15 @@
   }
   .why-item:last-child{border-bottom:1px solid var(--line);}
   .why-item .mark{
-    font-family:'Fraunces',serif; font-size:1.1rem; color:var(--brass); font-weight:500;
+    font-family:'Fraunces',serif; font-size:1.1rem; color:var(--brass-text); font-weight:500;
   }
   .why-item h3{font-size:1.1rem; margin-bottom:6px;}
   .why-item p{color:var(--ink-soft); font-size:0.94rem; line-height:1.6;}
 
   .why-panel{
-    background:var(--ink); color:var(--stone); border-radius:2px; padding:44px 38px;
+    background:var(--panel-dark); color:#EAE3D6; border-radius:2px; padding:44px 38px;
     position:relative; overflow:hidden;
   }
-  :root[data-theme="dark"] .why-panel, @media (prefers-color-scheme: dark){ .why-panel{ } }
   .why-panel h3{color:#F6F1E7; font-size:1.5rem; margin-bottom:18px;}
   .why-panel p{color:#D9CFC0; line-height:1.7; font-size:0.98rem;}
   .why-panel .quote-mark{font-family:'Fraunces',serif; font-size:3.2rem; color:var(--clay); line-height:1; display:block; margin-bottom:8px;}
@@ -438,7 +449,7 @@
 
   /* ---------- contact ---------- */
   .contact-shell{
-    background:var(--ink); color:var(--stone); border-radius:2px;
+    background:var(--panel-dark); color:#EAE3D6; border-radius:2px;
     padding:clamp(40px,6vw,72px); position:relative; overflow:hidden;
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px;
   }
@@ -454,7 +465,7 @@
   .contact-info{display:flex; flex-direction:column; gap:22px;}
   .contact-info .row{border-top:1px solid rgba(246,241,231,0.14); padding-top:18px;}
   .contact-info .row:first-child{border-top:none; padding-top:0;}
-  .contact-info .label{font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); font-weight:700;}
+  .contact-info .label{font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#D4AD6A; font-weight:700;}
   .contact-info .value{margin-top:6px; font-size:1.05rem; color:#F6F1E7; font-family:'Fraunces',serif;}
   .contact-info .value a{text-decoration:none; border-bottom:1px solid transparent;}
   .contact-info .value a:hover{border-color:var(--clay); color:var(--clay);}
@@ -516,7 +527,7 @@
   .cart-total .label{ font-size:0.82rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-soft); }
   .cart-total .value{ font-family:'Fraunces',serif; font-size:1.7rem; font-variant-numeric:tabular-nums; }
   .cart-panel .btn{ width:100%; justify-content:center; margin-top:20px; }
-  .cart-panel .btn[disabled]{ opacity:0.45; pointer-events:none; }
+  .cart-panel .btn[aria-disabled="true"]{ opacity:0.45; pointer-events:none; }
 
   /* ---------- map ---------- */
   .map-shell{
@@ -608,10 +619,36 @@
     display:none; align-items:center; gap:10px; font-size:0.92rem; color:var(--olive); font-weight:600;
   }
   .lead-success.show{ display:flex; }
+  .skip-link{position:absolute; left:12px; top:-80px; z-index:200; background:var(--panel-dark); color:#F6F1E7; padding:10px 16px; border-radius:2px; font-weight:700; font-size:0.9rem; text-decoration:none; transition:top .2s ease;}
+  .skip-link:focus{top:calc(12px + env(safe-area-inset-top, 0px));}
+  main:focus{outline:none;}
+  .collection-card img[role="button"]:focus-visible, .nemrut-slider img:focus-visible{outline:3px solid var(--clay); outline-offset:-3px;}
+  footer.site-foot{padding-left:20px; padding-right:20px;}
+  @media(max-width:600px){
+    .map-shell{height:auto; padding-top:200px;}
+    .map-shell .map-pin{top:130px;}
+    .map-card{position:relative; left:auto; right:auto; bottom:auto; margin:0 12px 12px;}
+    footer.site-foot{padding-bottom:100px;}
+  }
+  .collection-card{min-height:0; padding-top:calc(var(--card-img, 230px) + 22px);}
+  .collection-card img, .collection-card::before{height:var(--card-img, 230px);}
+  .collection-card .slide-nav{bottom:auto; top:calc(var(--card-img, 230px) - 42px);}
+  .logo-text{white-space:nowrap;}
+  nav a.nav-link{white-space:nowrap;}
+  @media(min-width:760px) and (max-width:1099px){ nav a.nav-link{display:none;} }
+  @media(max-width:360px){
+    .btn{white-space:normal; text-align:center; justify-content:center;}
+    .calc-form, .cart-panel{padding:28px 18px;}
+    .why-panel{padding:36px 24px;}
+    .field-row{grid-template-columns:1fr;}
+  }
 </style>
+</head>
+<body>
 
-<div class="curtain-panel"></div>
-<div class="curtain-panel right"></div>
+<a class="skip-link" href="#icerik">İçeriğe geç</a>
+<div class="curtain-panel" aria-hidden="true"></div>
+<div class="curtain-panel right" aria-hidden="true"></div>
 
 <a class="wa-float" href="https://wa.me/905332484202" target="_blank" rel="noopener" aria-label="WhatsApp'tan yazın">
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.9-2-1s-.5-.1-.7.1-.8 1-.9 1.1-.3.2-.6.1a7.6 7.6 0 0 1-2.2-1.4 8.3 8.3 0 0 1-1.5-1.9c-.2-.3 0-.5.1-.6l.4-.5.3-.4a.5.5 0 0 0 0-.5c-.1-.1-.7-1.7-1-2.3-.2-.6-.5-.5-.7-.5h-.6a1.1 1.1 0 0 0-.8.4 3.5 3.5 0 0 0-1 2.5c0 1.5 1 2.9 1.2 3.1s2 3.2 5 4.4a16 16 0 0 0 1.7.6 4 4 0 0 0 1.8.1 3 3 0 0 0 2-1.4 2.4 2.4 0 0 0 .1-1.4c-.1-.1-.3-.2-.6-.4z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3a8.2 8.2 0 1 1 15.1-4.5 8.2 8.2 0 0 1-8.2 8.2z"/></svg>
@@ -619,7 +656,7 @@
 
 <header id="site-header">
   <div class="logo">
-    <img class="brand-mark-img" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/logo.png" alt="Reyya Home Tasarım logosu">
+    <img class="brand-mark-img" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/logo-v2.png" alt="Reyya Home Tasarım logosu" width="52" height="52">
     <span class="logo-text">REYYA HOME <span>TASARIM — ADIYAMAN</span></span>
   </div>
   <nav>
@@ -634,6 +671,7 @@
   </nav>
 </header>
 
+<main id="icerik" tabindex="-1">
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
@@ -651,10 +689,10 @@
       </div>
     </div>
     <div class="hero-visual" style="--c1:#545A3E;--c2:#2A241F;">
-      <img src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero1.jpg" alt="Işığı süzen keten tül perde, oturma odası" class="slide">
-      <img class="slide" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero2.jpg" alt="Adıyaman salonunda ışığı süzen tül perde">
-      <img class="slide" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero3.jpg" alt="Yatak odasında sabah ışığında perde">
-      <div class="tag"><b>Nemrut Koleksiyonu</b>Ham keten &amp; kadife karışımı, gün batımı tonlarında özel dokuma.</div>
+      <img src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero1.jpg" alt="Işığı süzen keten tül perde, oturma odası" class="slide" fetchpriority="high" decoding="async">
+      <img class="slide" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero2.jpg" alt="Adıyaman salonunda ışığı süzen tül perde" fetchpriority="low" decoding="async">
+      <img class="slide" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/hero3.jpg" alt="Yatak odasında sabah ışığında perde" fetchpriority="low" decoding="async">
+      <div class="tag"><b>Anka Koleksiyonu</b>Ham keten &amp; kadife karışımı, gün batımı tonlarında özel dokuma.</div>
     </div>
   </div>
 </section>
@@ -673,56 +711,56 @@
     <div class="section-head">
       <p class="eyebrow">Koleksiyon</p>
       <h2>Her oda, kendi kumaşını hak eder.</h2>
-      <p>Salondan yatak odasına, ofisten vitrin cephesine — ışığı süzen tüllerden ağır dökümlü fon perdelere kadar dört ana koleksiyon.</p>
+      <p>Salondan yatak odasına, ofisten vitrin cephesine — ışığı süzen tüllerden ağır dökümlü fon perdelere kadar altı ana koleksiyon.</p>
     </div>
-    <div class="filter-row" id="filter-row">
-      <button class="filter-tab active" type="button" data-filter="all">Tümü</button>
-      <button class="filter-tab" type="button" data-filter="fon">Fon Perde</button>
-      <button class="filter-tab" type="button" data-filter="tul">Tül &amp; Işık</button>
-      <button class="filter-tab" type="button" data-filter="stor">Stor &amp; Zebra</button>
-      <button class="filter-tab" type="button" data-filter="otel">Otel &amp; Proje</button>
-      <button class="filter-tab" type="button" data-filter="aksesuar">Aksesuar</button>
-      <button class="filter-tab" type="button" data-filter="yatak">Yatak Odası</button>
+    <div class="filter-row" id="filter-row" role="group" aria-label="Koleksiyon filtresi">
+      <button class="filter-tab active" type="button" data-filter="all" aria-pressed="true">Tümü</button>
+      <button class="filter-tab" type="button" data-filter="fon" aria-pressed="false">Fon Perde</button>
+      <button class="filter-tab" type="button" data-filter="tul" aria-pressed="false">Tül &amp; Işık</button>
+      <button class="filter-tab" type="button" data-filter="stor" aria-pressed="false">Stor &amp; Zebra</button>
+      <button class="filter-tab" type="button" data-filter="otel" aria-pressed="false">Otel &amp; Proje</button>
+      <button class="filter-tab" type="button" data-filter="aksesuar" aria-pressed="false">Aksesuar</button>
+      <button class="filter-tab" type="button" data-filter="yatak" aria-pressed="false">Yatak Odası</button>
     </div>
     <div class="collection-grid">
       <div class="collection-card" data-cat="fon" style="--c1:#7F2C1B;--c2:#2A241F;">
-        <img src="" id="cimg-fon" alt="Oturma odasında turuncu-kahve tonlarında dökümlü fon perde ve yanında tül">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/20</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-fon" loading="lazy" decoding="async" tabindex="0" role="button" alt="Oturma odasında turuncu-kahve tonlarında dökümlü fon perde ve yanında tül">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/20</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">01</span>
         <h3>Fon Perde</h3>
         <p>Kadife ve keten ağırlıklı, tok döküm — salon ve misafir odaları için.</p>
       </div>
       <div class="collection-card" data-cat="tul" style="--c1:#9C7A3C;--c2:#2A241F;">
-        <img src="" id="cimg-tul" alt="Teras kapısı önünde zeminden tavana beyaz dantel dokulu tül perde">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/14</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-tul" loading="lazy" decoding="async" tabindex="0" role="button" alt="Teras kapısı önünde zeminden tavana beyaz dantel dokulu tül perde">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/14</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">02</span>
         <h3>Tül &amp; Işık Perdesi</h3>
         <p>İnce dokulu, ışığı yumuşatan şeffaf kumaşlar.</p>
       </div>
       <div class="collection-card" data-cat="stor" style="--c1:#545A3E;--c2:#2A241F;">
-        <img src="" id="cimg-stor" alt="Mutfak penceresinde siyah şeritli krem stor perde">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/9</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-stor" loading="lazy" decoding="async" tabindex="0" role="button" alt="Mutfak penceresinde siyah şeritli krem stor perde">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/9</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">03</span>
         <h3>Stor &amp; Zebra</h3>
         <p>Minimal cepheler ve ofisler için mekanizmalı sistemler.</p>
       </div>
       <div class="collection-card" data-cat="otel" style="--c1:#3a3d2c;--c2:#7F2C1B;">
-        <img src="" id="cimg-otel" alt="Püsküllü kordonla bağlanmış gri saten fon perde">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/18</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-otel" loading="lazy" decoding="async" tabindex="0" role="button" alt="Püsküllü kordonla bağlanmış gri saten fon perde">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/18</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">04</span>
         <h3>Otel &amp; Proje</h3>
         <p>Toplu üretim, yangın geciktirici kumaş seçenekleriyle kurumsal projeler.</p>
       </div>
       <div class="collection-card" data-cat="aksesuar" style="--c1:#2A241F;--c2:#9C7A3C;">
-        <img src="" id="cimg-aksesuar" alt="Vitrinde altın kordon ve püskül tutuculu fuşya kadife fon perde detayı">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/17</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-aksesuar" loading="lazy" decoding="async" tabindex="0" role="button" alt="Vitrinde altın kordon ve püskül tutuculu fuşya kadife fon perde detayı">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/17</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">05</span>
         <h3>Aksesuar &amp; Kornij</h3>
         <p>Ahşap ve metal kornij, ponpon, kordon ve tutucu detayları.</p>
       </div>
       <div class="collection-card" data-cat="yatak" style="--c1:#A63A24;--c2:#3a3d2c;">
-        <img src="" id="cimg-yatak" alt="Salonda simetrik kahverengi fon perde ve ortada sivri kesim tül">
-<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/8</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+        <img id="cimg-yatak" loading="lazy" decoding="async" tabindex="0" role="button" alt="Salonda simetrik kahverengi fon perde ve ortada sivri kesim tül">
+<div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/8</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
         <span class="num">06</span>
         <h3>Yatak Odası Seti</h3>
         <p>Nevresim uyumlu, karartma özellikli kumaş kombinasyonları.</p>
@@ -731,16 +769,16 @@
   </div>
 </section>
 
-<section class="nemrut-section" id="nemrut">
+<section class="nemrut-section" id="anka">
   <div class="wrap">
     <div class="section-head">
       <p class="eyebrow">İmza Koleksiyon</p>
-      <h2>Nemrut Koleksiyonu</h2>
-      <p class="lead">Adıyaman'ın gökyüzüne uzanan heybetiyle Nemrut Dağı gibi, Reyya'nın en şık işleri de zamanın ötesinde durur. Atölyemizden en etkileyici kareleri bir araya getirdik.</p>
+      <h2>Anka Koleksiyonu</h2>
+      <p class="lead">Küllerinden yeniden doğan efsanevi Anka gibi, Reyya'nın en şık işleri de girdiği her mekâna yeni bir hayat verir. Atölyemizden en etkileyici kareleri bir araya getirdik.</p>
     </div>
     <div class="nemrut-slider" data-gallery="nemrut">
-      <img id="cimg-nemrut" src="" alt="">
-      <div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Onceki fotograf">&#8249;</button><span class="slide-count">1/26</span><button type="button" class="slide-btn next" aria-label="Sonraki fotograf">&#8250;</button></div>
+      <img id="cimg-nemrut" alt="Anka Koleksiyonu" loading="lazy" decoding="async" tabindex="0" role="button">
+      <div class="slide-nav"><button type="button" class="slide-btn prev" aria-label="Önceki fotoğraf">&#8249;</button><span class="slide-count" aria-live="polite">1/26</span><button type="button" class="slide-btn next" aria-label="Sonraki fotoğraf">&#8250;</button></div>
     </div>
   </div>
 </section>
@@ -788,12 +826,12 @@
       <div class="cart-panel">
         <h3>Sipariş Sepeti</h3>
         <div class="cart-list" id="cart-list"></div>
-        <p class="cart-empty" id="cart-empty">Sepetiniz boş — soldan ölçünüzü girip ekleyin.</p>
+        <p class="cart-empty" id="cart-empty">Sepetiniz boş — ölçünüzü girip "Sepete Ekle"ye dokunun.</p>
         <div class="cart-total">
           <span class="label">Toplam</span>
           <span class="value" id="cart-total">0 ₺</span>
         </div>
-        <a class="btn" id="cart-order" href="#" target="_blank" rel="noopener" disabled>WhatsApp'tan Sipariş Ver</a>
+        <a class="btn" id="cart-order" href="#" target="_blank" rel="noopener" aria-disabled="true" tabindex="-1">WhatsApp'tan Sipariş Ver</a>
       </div>
     </div>
   </div>
@@ -820,7 +858,7 @@
       </div>
     </div>
     <div class="why-panel">
-      <span class="quote-mark">"</span>
+      <span class="quote-mark" aria-hidden="true">"</span>
       <h3>Perde, bir evin ilk ve son bakışıdır.</h3>
       <p>Bir pencereyi kapatmak kolaydır; onu evin geri kalanıyla konuşturmak zor. Reyya'da her ölçüm bir keşif, her kumaş bir karar. Hızlı mağazanın erişilebilirliğini, lüks atölyenin özenini bir araya getiriyoruz — Adıyaman'ın kendi ışığına göre.</p>
       <p style="margin-top:22px; font-family:'Fraunces',serif; color:#F6F1E7; font-size:1rem;">— Reyya Home Tasarım Atölyesi</p>
@@ -857,11 +895,11 @@
       <div class="lead-fields">
         <div class="field">
           <label for="lead-name">Ad Soyad</label>
-          <input type="text" id="lead-name" name="name" required placeholder="Adınız Soyadınız">
+          <input type="text" id="lead-name" name="name" required autocomplete="name" placeholder="Adınız Soyadınız">
         </div>
         <div class="field">
           <label for="lead-phone">Telefon Numaranız</label>
-          <input type="tel" id="lead-phone" name="phone" required placeholder="05xx xxx xx xx">
+          <input type="tel" id="lead-phone" name="phone" required autocomplete="tel" placeholder="05xx xxx xx xx">
         </div>
       </div>
       <div>
@@ -880,17 +918,17 @@
     </div>
     <div class="testimonial-row">
       <div class="t-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
         <p>"Ölçüm gününden kuruluma kadar tek bir kişiyle muhatap olduk. Salonun ışığı tamamen değişti."</p>
         <footer>— Merkez, Adıyaman</footer>
       </div>
       <div class="t-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
         <p>"Kumaş kalitesi gerçekten farklı. Bir yıl sonra hâlâ ilk günkü gibi duruyor."</p>
         <footer>— Kahta, Adıyaman</footer>
       </div>
       <div class="t-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars" role="img" aria-label="5 üzerinden 5 yıldız">★★★★★</div>
         <p>"Ofis vitrinimiz için zebra perde yaptırdık, teslim süresi söz verdikleri gibiydi."</p>
         <footer>— Kurumsal Müşteri</footer>
       </div>
@@ -902,7 +940,7 @@
   <div class="wrap">
     <div class="contact-shell">
       <div>
-        <p class="eyebrow" style="color:var(--brass);">İletişim</p>
+        <p class="eyebrow" style="color:#D4AD6A;">İletişim</p>
         <h2 style="margin-top:12px;">Pencerenizi konuşalım.</h2>
         <p class="lead">Ücretsiz keşif ve ölçüm için WhatsApp'tan yazın ya da atölyemizi ziyaret edin. Adıyaman merkez ve çevresine hizmet veriyoruz.</p>
         <div class="contact-cta">
@@ -942,14 +980,16 @@
   </div>
 </section>
 
+</main>
+
 <footer class="site-foot">
-  <img class="brand-mark-img brand-mark-img--footer" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/logo.png" alt="Reyya Home Tasarım logosu" style="margin:0 auto 14px;">
+  <img class="brand-mark-img brand-mark-img--footer" src="https://i1mxwk5apfpr3a15.public.blob.vercel-storage.com/images/logo-v2.png" alt="Reyya Home Tasarım logosu" width="64" height="64" loading="lazy" style="margin:0 auto 14px;">
   <p>© 2026 Reyya Home Tasarım — Adıyaman. Tüm hakları saklıdır.</p>
 </footer>
 
-<div id="lightbox" class="lightbox" hidden>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Fotoğraf büyük görünüm" hidden>
   <button type="button" class="lightbox-close" aria-label="Kapat">&times;</button>
-  <img id="lightbox-img" src="" alt="">
+  <img id="lightbox-img" alt="">
 </div>
 
 <script>
@@ -957,69 +997,74 @@ const GALLERY_IMAGES = {"04cdd803b250ff2bef5bea110122f6d8":"https://i1mxwk5apfpr
 const GALLERY_CATS = {fon:["343e57a82183f82f982dbe4d9bc11352","462bdb162f7ddff8f5d54549ca82a18c","cae175dc5876e22a8c77b91ea205b57f","04cdd803b250ff2bef5bea110122f6d8","cd64ca137409bc383aed38cb7d96bb5c","472c945f276ae2f5e9eedc097a2dfaa4","4731949cf907997c0a950b2a59e601d3","27d7e32b155e24e432a22aec34d62b68","34e5cf169dbbd2ea901644eb44dda978","87ffbbc1e58a340e61d1844716ae52e7","b34b531419ad25606869fc1b20975edc","3b3d762f69b4c15cd9d13bf3316d82f6","5b5b6679ef49ee11d5c3c30d532d8906","16082f6eea01e51526241383168023e2","18af846448bd5cf661f95d04d15c99bc","f04d23398e1c12ea740472da9c7a44d7","c96ad079be80b51542179b674fefe065","85332745a86d0982e671c0057c5c117f","5ad48c70facdaaeec573239859040ae8","8bec97f03b329e09c37db4c481ee93ac"],tul:["462bdb162f7ddff8f5d54549ca82a18c","cae175dc5876e22a8c77b91ea205b57f","cd64ca137409bc383aed38cb7d96bb5c","04cdd803b250ff2bef5bea110122f6d8","472c945f276ae2f5e9eedc097a2dfaa4","4731949cf907997c0a950b2a59e601d3","27d7e32b155e24e432a22aec34d62b68","ceb63d43d8ad590114b9fed3eab85b26","b34b531419ad25606869fc1b20975edc","3b3d762f69b4c15cd9d13bf3316d82f6","f04d23398e1c12ea740472da9c7a44d7","85332745a86d0982e671c0057c5c117f","5ad48c70facdaaeec573239859040ae8","8bec97f03b329e09c37db4c481ee93ac"],stor:["67fba3cd6474bfe27da385c0fa7f7ed5","343e57a82183f82f982dbe4d9bc11352","cae175dc5876e22a8c77b91ea205b57f","18af846448bd5cf661f95d04d15c99bc","8d70e108c0d5b1104361d183fb690d5b","c96ad079be80b51542179b674fefe065","a17be27d30bd13854c73726a4679222b","1d396562eed8f4b964c536038573da5a","77e7d7ba8a490060ddf04b8670e1a13e"],otel:["04cdd803b250ff2bef5bea110122f6d8","462bdb162f7ddff8f5d54549ca82a18c","cae175dc5876e22a8c77b91ea205b57f","cd64ca137409bc383aed38cb7d96bb5c","472c945f276ae2f5e9eedc097a2dfaa4","4731949cf907997c0a950b2a59e601d3","34e5cf169dbbd2ea901644eb44dda978","27d7e32b155e24e432a22aec34d62b68","87ffbbc1e58a340e61d1844716ae52e7","b34b531419ad25606869fc1b20975edc","3b3d762f69b4c15cd9d13bf3316d82f6","16082f6eea01e51526241383168023e2","ceb63d43d8ad590114b9fed3eab85b26","18af846448bd5cf661f95d04d15c99bc","f04d23398e1c12ea740472da9c7a44d7","c96ad079be80b51542179b674fefe065","85332745a86d0982e671c0057c5c117f","8bec97f03b329e09c37db4c481ee93ac"],aksesuar:["34e5cf169dbbd2ea901644eb44dda978","462bdb162f7ddff8f5d54549ca82a18c","cae175dc5876e22a8c77b91ea205b57f","04cdd803b250ff2bef5bea110122f6d8","cd64ca137409bc383aed38cb7d96bb5c","472c945f276ae2f5e9eedc097a2dfaa4","343e57a82183f82f982dbe4d9bc11352","4731949cf907997c0a950b2a59e601d3","87ffbbc1e58a340e61d1844716ae52e7","b34b531419ad25606869fc1b20975edc","67fba3cd6474bfe27da385c0fa7f7ed5","5b5b6679ef49ee11d5c3c30d532d8906","18af846448bd5cf661f95d04d15c99bc","85332745a86d0982e671c0057c5c117f","5ad48c70facdaaeec573239859040ae8","f04d23398e1c12ea740472da9c7a44d7","8bec97f03b329e09c37db4c481ee93ac"],yatak:["cd64ca137409bc383aed38cb7d96bb5c","4731949cf907997c0a950b2a59e601d3","16082f6eea01e51526241383168023e2","18af846448bd5cf661f95d04d15c99bc","b34b531419ad25606869fc1b20975edc","85332745a86d0982e671c0057c5c117f","5ad48c70facdaaeec573239859040ae8","8bec97f03b329e09c37db4c481ee93ac"]};
 const NEMRUT_ORDER = ["343e57a82183f82f982dbe4d9bc11352","462bdb162f7ddff8f5d54549ca82a18c","cae175dc5876e22a8c77b91ea205b57f","04cdd803b250ff2bef5bea110122f6d8","cd64ca137409bc383aed38cb7d96bb5c","472c945f276ae2f5e9eedc097a2dfaa4","34e5cf169dbbd2ea901644eb44dda978","4731949cf907997c0a950b2a59e601d3","27d7e32b155e24e432a22aec34d62b68","67fba3cd6474bfe27da385c0fa7f7ed5","87ffbbc1e58a340e61d1844716ae52e7","b34b531419ad25606869fc1b20975edc","3b3d762f69b4c15cd9d13bf3316d82f6","5b5b6679ef49ee11d5c3c30d532d8906","16082f6eea01e51526241383168023e2","ceb63d43d8ad590114b9fed3eab85b26","18af846448bd5cf661f95d04d15c99bc","8d70e108c0d5b1104361d183fb690d5b","f04d23398e1c12ea740472da9c7a44d7","c96ad079be80b51542179b674fefe065","a17be27d30bd13854c73726a4679222b","85332745a86d0982e671c0057c5c117f","1d396562eed8f4b964c536038573da5a","5ad48c70facdaaeec573239859040ae8","77e7d7ba8a490060ddf04b8670e1a13e","8bec97f03b329e09c37db4c481ee93ac"];
 
+var reyyaLastFocus = null;
 function reyyaOpenLightbox(src, alt){
   var lb = document.getElementById('lightbox');
   var img = document.getElementById('lightbox-img');
   if (!lb || !img || !src) return;
+  reyyaLastFocus = document.activeElement;
   img.src = src; img.alt = alt || '';
   lb.hidden = false;
+  var closeBtn = lb.querySelector('.lightbox-close');
+  if (closeBtn) closeBtn.focus();
 }
 function reyyaCloseLightbox(){
   var lb = document.getElementById('lightbox');
-  if (lb) lb.hidden = true;
+  if (!lb || lb.hidden) return;
+  lb.hidden = true;
+  if (reyyaLastFocus && reyyaLastFocus.focus) reyyaLastFocus.focus();
 }
 (function(){
   var lb = document.getElementById('lightbox');
-  if (lb) {
-    lb.addEventListener('click', function(e){ if (e.target === lb) reyyaCloseLightbox(); });
-    var closeBtn = lb.querySelector('.lightbox-close');
-    if (closeBtn) closeBtn.addEventListener('click', reyyaCloseLightbox);
-  }
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') reyyaCloseLightbox(); });
+  if (!lb) return;
+  var closeBtn = lb.querySelector('.lightbox-close');
+  lb.addEventListener('click', function(e){ if (e.target === lb) reyyaCloseLightbox(); });
+  if (closeBtn) closeBtn.addEventListener('click', reyyaCloseLightbox);
+  document.addEventListener('keydown', function(e){
+    if (lb.hidden) return;
+    if (e.key === 'Escape') { reyyaCloseLightbox(); }
+    else if (e.key === 'Tab' && closeBtn) { e.preventDefault(); closeBtn.focus(); }
+  });
 })();
 
-function reyyaInitGallerySliders(){
-  var codeName = { fon:'Fon Perde', tul:'Tül & Işık Perdesi', stor:'Stor & Zebra', otel:'Otel & Proje', aksesuar:'Aksesuar & Kornij', yatak:'Yatak Odası Seti', nemrut:'Nemrut Koleksiyonu' };
+function reyyaSetupSlider(img, nav, hashes, label){
+  var countEl = nav.querySelector('.slide-count');
+  var prevBtn = nav.querySelector('.slide-btn.prev');
+  var nextBtn = nav.querySelector('.slide-btn.next');
+  var idx = 0;
+  prevBtn.setAttribute('aria-label', label + ': önceki fotoğraf');
+  nextBtn.setAttribute('aria-label', label + ': sonraki fotoğraf');
+  function render(){
+    img.src = GALLERY_IMAGES[hashes[idx]];
+    img.alt = label + ' örneği ' + (idx + 1) + '/' + hashes.length;
+    img.setAttribute('aria-label', img.alt + ' — büyütmek için tıklayın');
+    countEl.textContent = (idx + 1) + '/' + hashes.length;
+  }
+  function open(){ reyyaOpenLightbox(img.src, img.alt); }
+  prevBtn.addEventListener('click', function(e){ e.stopPropagation(); idx = (idx - 1 + hashes.length) % hashes.length; render(); });
+  nextBtn.addEventListener('click', function(e){ e.stopPropagation(); idx = (idx + 1) % hashes.length; render(); });
+  img.addEventListener('click', open);
+  img.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); idx = (idx + 1) % hashes.length; render(); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); idx = (idx - 1 + hashes.length) % hashes.length; render(); }
+  });
+  render();
+}
 
+function reyyaInitGallerySliders(){
+  var codeName = { fon:'Fon Perde', tul:'Tül & Işık Perdesi', stor:'Stor & Zebra', otel:'Otel & Proje', aksesuar:'Aksesuar & Kornij', yatak:'Yatak Odası Seti' };
   document.querySelectorAll('.collection-card[data-cat]').forEach(function(card){
     var cat = card.getAttribute('data-cat');
     var hashes = (typeof GALLERY_CATS !== 'undefined') ? GALLERY_CATS[cat] : null;
-    if (!hashes || !hashes.length) return;
     var img = card.querySelector('img[id^="cimg-"]');
     var nav = card.querySelector('.slide-nav');
-    if (!img || !nav) return;
-    var countEl = nav.querySelector('.slide-count');
-    var prevBtn = nav.querySelector('.slide-btn.prev');
-    var nextBtn = nav.querySelector('.slide-btn.next');
-    var idx = 0;
-    function render(){
-      img.src = GALLERY_IMAGES[hashes[idx]];
-      img.alt = (codeName[cat] || cat) + ' örneği ' + (idx + 1) + '/' + hashes.length;
-      countEl.textContent = (idx + 1) + '/' + hashes.length;
-    }
-    prevBtn.addEventListener('click', function(e){ e.stopPropagation(); idx = (idx - 1 + hashes.length) % hashes.length; render(); });
-    nextBtn.addEventListener('click', function(e){ e.stopPropagation(); idx = (idx + 1) % hashes.length; render(); });
-    img.addEventListener('click', function(){ reyyaOpenLightbox(img.src, img.alt); });
-    render();
+    if (!hashes || !hashes.length || !img || !nav) return;
+    reyyaSetupSlider(img, nav, hashes, codeName[cat] || cat);
   });
-
-  var nemrutEl = document.querySelector('.nemrut-slider[data-gallery="nemrut"]');
-  if (nemrutEl && typeof NEMRUT_ORDER !== 'undefined' && NEMRUT_ORDER.length) {
-    var nimg = nemrutEl.querySelector('#cimg-nemrut');
-    var nnav = nemrutEl.querySelector('.slide-nav');
-    var ncount = nnav.querySelector('.slide-count');
-    var nprev = nnav.querySelector('.slide-btn.prev');
-    var nnext = nnav.querySelector('.slide-btn.next');
-    var nidx = 0;
-    function nrender(){
-      nimg.src = GALLERY_IMAGES[NEMRUT_ORDER[nidx]];
-      nimg.alt = 'Nemrut Koleksiyonu örneği ' + (nidx + 1) + '/' + NEMRUT_ORDER.length;
-      ncount.textContent = (nidx + 1) + '/' + NEMRUT_ORDER.length;
-    }
-    nprev.addEventListener('click', function(e){ e.stopPropagation(); nidx = (nidx - 1 + NEMRUT_ORDER.length) % NEMRUT_ORDER.length; nrender(); });
-    nnext.addEventListener('click', function(e){ e.stopPropagation(); nidx = (nidx + 1) % NEMRUT_ORDER.length; nrender(); });
-    nimg.addEventListener('click', function(){ reyyaOpenLightbox(nimg.src, nimg.alt); });
-    nrender();
+  var ankaEl = document.querySelector('.nemrut-slider[data-gallery="nemrut"]');
+  if (ankaEl && typeof NEMRUT_ORDER !== 'undefined' && NEMRUT_ORDER.length) {
+    reyyaSetupSlider(ankaEl.querySelector('#cimg-nemrut'), ankaEl.querySelector('.slide-nav'), NEMRUT_ORDER, 'Anka Koleksiyonu');
   }
 }
 reyyaInitGallerySliders();
@@ -1035,6 +1080,7 @@ reyyaInitGallerySliders();
   document.querySelectorAll('.curtain-panel').forEach(p => {
     p.addEventListener('animationend', () => p.style.display = 'none');
   });
+  setTimeout(() => document.querySelectorAll('.curtain-panel').forEach(p => { p.style.display = 'none'; }), 2500);
 
   // ---------- price calculator + cart ----------
   (function () {
@@ -1049,6 +1095,7 @@ reyyaInitGallerySliders();
     const cartEmptyEl = document.getElementById('cart-empty');
     const cartTotalEl = document.getElementById('cart-total');
     const orderBtn = document.getElementById('cart-order');
+    orderBtn.addEventListener('click', (e) => { if (orderBtn.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
 
     let cart = [];
 
@@ -1078,10 +1125,12 @@ reyyaInitGallerySliders();
       cartListEl.innerHTML = '';
       if (cart.length === 0) {
         cartEmptyEl.style.display = 'block';
-        orderBtn.setAttribute('disabled', 'true');
+        orderBtn.setAttribute('aria-disabled', 'true');
+        orderBtn.setAttribute('tabindex', '-1');
       } else {
         cartEmptyEl.style.display = 'none';
-        orderBtn.removeAttribute('disabled');
+        orderBtn.removeAttribute('aria-disabled');
+        orderBtn.removeAttribute('tabindex');
       }
       cart.forEach((item, i) => {
         const row = document.createElement('div');
@@ -1141,8 +1190,9 @@ reyyaInitGallerySliders();
     const cards = document.querySelectorAll('.collection-card');
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-pressed', 'false'); });
         tab.classList.add('active');
+        tab.setAttribute('aria-pressed', 'true');
         const f = tab.dataset.filter;
         cards.forEach(card => {
           card.hidden = f !== 'all' && card.dataset.cat !== f;
@@ -1168,3 +1218,5 @@ reyyaInitGallerySliders();
     });
   })();
 </script>
+</body>
+</html>
